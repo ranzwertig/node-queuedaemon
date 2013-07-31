@@ -1,0 +1,38 @@
+{
+  "name": "node-queuedaemon",
+  "version": "0.0.1",
+  "description": "A nodejs queue daemon working with several backends like redis, mongodb. Includes recover and ttl function.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ranzwertig/node-queuedaemon.git"
+  },
+  "keywords": [
+    "queue",
+    "mongodb",
+    "redis",
+    "daemon"
+  ],
+  "dependencies": {
+    "underscore": "1.4.x"
+  },
+  "devDependencies": {
+    "redis": "0.8.4",
+    "grunt-contrib-jshint": "~0.1.1",
+    "grunt-contrib-watch": "~0.2.0",
+    "coffee-script": "~1.4.0",
+    "grunt": "~0.4.0",
+    "grunt-contrib": "0.4.x",
+    "grunt-contrib-coffee": "0.4.x",
+    "grunt-contrib-clean": "0.4.x",
+    "grunt-jasmine-node": "https://github.com/ranzwertig/grunt-jasmine-node/tarball/master"
+  },
+  "author": "Christian Ranz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ranzwertig/node-queuedaemon/issues"
+  }
+}
