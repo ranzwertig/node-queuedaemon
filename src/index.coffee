@@ -1,1 +1,3 @@
-module.exports = require './lib/queuedaemon'
+module.exports.QueueDaemon = require './lib/queuedaemon'
+module.exports.errors = require './lib/errors'
+module.exports.CustomPreserver = require './lib/preservers/custompreserver'

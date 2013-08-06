@@ -9,7 +9,7 @@ options =
     recoverOnStartup: true
     ttlLifetime: 10
 
-daemon = new Daemon options
+daemon = new daemon.QueueDaemon options
 
 daemon.on 'error', (error) ->
     console.log error

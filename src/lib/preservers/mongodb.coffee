@@ -1,7 +1,7 @@
 _ = require 'underscore'
 errors = require '../errors'
 
-class RedisPreserver
+class MongoPreserver
 
     constructor: (@options) ->
 
@@ -43,10 +43,6 @@ class RedisPreserver
 
     
     jobDone: (cb) =>
-        @options.client.lpop @options.tmpQueueName, (error, rawJob) =>
-            if error
-                cb new errors.preserver.DbClientError('Error in jobDone - redis lpop!', null, error)
-            else
                 cb null
 
 

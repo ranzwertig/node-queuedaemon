@@ -25,13 +25,17 @@ class QueueDaemon extends events.EventEmitter
         @_stopped = false
         @_stoppedCallback = () ->
 
-        # detect client
-        clientType = clientTools.detectClientType @options.client
-
-        if clientType
-            @preserver = Preserver.create clientType.toLowerCase(), @options
+        if @options.customPreserver
+            @preserver = @options.customPreserver
+            @preserver.setQueueDaemonOptions @options
         else
-            throw new errors.queuedaemon.UnsupportedDbClientError 'Unsupported database client in options detected!'
+            # detect client
+            clientType = clientTools.detectClientType @options.client
+
+            if clientType
+                @preserver = Preserver.create clientType.toLowerCase(), @options
+            else
+                throw new errors.queuedaemon.UnsupportedDbClientError 'Unsupported database client in options detected!'
 
     _recover: (startAfterRecovering=false, cb=->) =>
         @preserver.recover (error, ttl) =>

@@ -14,7 +14,7 @@
     ttlLifetime: 10
   };
 
-  daemon = new Daemon(options);
+  daemon = new daemon.QueueDaemon(options);
 
   daemon.on('error', function(error) {
     return console.log(error);
