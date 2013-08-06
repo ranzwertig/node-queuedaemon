@@ -100,8 +100,4 @@ class QueueDaemon extends events.EventEmitter
         @_stoppedCallback = cb
         @_stopped = true
 
-
-
-
-
 module.exports = QueueDaemon
